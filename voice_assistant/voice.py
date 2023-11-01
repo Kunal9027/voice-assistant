@@ -118,8 +118,14 @@ def kunal():
             speak("I am fine, Thank you")
             speak("How are you, Sir")
             
-        elif 'fine' in command or "good" in command:
-            speak("It's good to know that your fine")
+            if 'fine' in command or "good" in command:
+                speak("It's good to know that your fine")
+                
+            elif 'i am sad' in command:
+                speak("would you like to listen music ")
+                
+                if 'yes' in  command:
+                    
             
             
         elif "where is" in command:              
