@@ -44,13 +44,11 @@ def wishMe():
         speak("Good Evening Sir !")
 
 def create_reminder(reminder_text, time):
-    
     # You can implement this function to create reminders using a calendar API or file storage
     # For simplicity, we will just print the reminder here
     print(f"Reminder: '{reminder_text}' set for {time}.")
 
 def create_todo_list(task_text):
-    
     # You can implement this function to add tasks to a to-do list using a task management library or file storage
     # For simplicity, we will just print the task here
     print(f"Added to your to-do list: '{task_text}'.")
@@ -120,22 +118,9 @@ def kunal():
             speak("I am fine, Thank you")
             speak("How are you, Sir")
             
-            if 'fine' in command or "good" in command:
-                speak("It's good to know that your fine")
-                
-            elif 'i am sad' in command:
-                speak("would you like to listen some music")
-                if 'yes' in command:
-                    speak("which song should i play")
-                    query = listen()
-                    if query:
-                        search_url = f"https://www.youtube.com/results?search_query={query}"
-                        webbrowser.open(search_url)
-                        speak(f"Here are the search results for '{query}'.")
-                else:
-                    speak("ok what else i can do for you")   
-                    
-       
+        elif 'fine' in command or "good" in command:
+            speak("It's good to know that your fine")
+            
             
         elif "where is" in command:              
             query = query.replace("where is", "")
