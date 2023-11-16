@@ -34,9 +34,6 @@ def listen():         #listen function
             print(f"Could not request results: {e}")
             return ""
 
-#-------API KEY-------#
-API = "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"
-
 #------ MAIN FEATURES ------#
 
 def wishMe():         #wish me function
