@@ -34,9 +34,6 @@ def listen():         #listen function
             print(f"Could not request results: {e}")
             return ""
 
-#-------API KEY-------#
-API = "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"
-
 #------ MAIN FEATURES ------#
 
 def wishMe():         #wish me function
@@ -51,7 +48,7 @@ def wishMe():         #wish me function
     else:
         speak("Good Evening Sir !")
        
-def youtue():         #youtube search function
+def youtue_search():         #youtube search function
     while True:
         speak("what should i search on youtube")
         query = listen()
@@ -60,6 +57,11 @@ def youtue():         #youtube search function
             webbrowser.open(search_url)
             speak(f"Here are the search results for '{query}'.")
             break 
+
+def open_youtube():
+    speak("opening youtube")
+    search_url = f"https://www.youtube.com/"
+    webbrowser.open(search_url)
         
 def brave():           #brave browser open function
     speak("opening brave")
@@ -69,8 +71,7 @@ def kill_brave():      #brave browser close function
     speak("closing brave")
     os.system("taskkill /f /im brave.exe")     
         
-def search():          #google search function
-    
+def search():          #google search function  
     while True:
         
         speak("what should i search on google")
@@ -80,7 +81,11 @@ def search():          #google search function
             webbrowser.open(search_url)
             speak(f"Here are the search results for '{query}'.")
             break
-        
+
+def open_google():     #open google search function
+    speak("opening google")
+    search_url = f"https://www.google.com/"
+    webbrowser.open(search_url)        
             
              
 def stackoverflow():    #open stackoverflow search function
@@ -92,6 +97,8 @@ def wikipedia():       #open wikipedia search function
     speak("Here you go to wikipedia")
     search_url = f"https://www.wikipedia.com/"
     webbrowser.open(search_url)      
+
+    
         
 def edge():            #open edge browser search function
     speak("opening edge")
@@ -109,29 +116,7 @@ def kill_notepad():    #close notepad function
     speak("closing notepad")
     os.system("taskkill /f /im notepad.exe")
     
-def enter():           #press enter function
-    speak("pressing enter")
-    os.system("enter")
-    
-def backspace():       #press backspace function
-    speak("how many times")
-    command = listen().lower()
-    for i in range(command):
-        speak("pressing backspace")
-        os.system("backspace")
 
-def tab():             #press tab function
-    speak("pressing tab")
-    os.system("tab")
-    
-def space():           #press space function
-    speak("pressing space")
-    os.system("space")
-    
-def undo():            #press undo function
-    speak("pressing undo")
-    os.system("undo")
-            
  
  
     

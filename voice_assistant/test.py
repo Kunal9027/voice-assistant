@@ -1,6 +1,7 @@
 from commands import *
 
 def kunal():   
+   
     wishMe()
     speak("how can i help you ?")
   
@@ -27,19 +28,26 @@ def kunal():
         elif "close brave" in command:
             kill_brave()    
                 
-        elif 'youtube' in command:             # it open youtube
-            youtue()
+        elif 'open youtube' in command:             # it open youtube
+            open_youtube()
+
+        elif 'search on youtube' in command:        # it search on youtube
+            youtue_search()
  
         elif 'open google' in command:              # it open google
-            speak("Here you go to Google\n")
-            search_url = f"https://www.google.com/"
-            webbrowser.open("search_url")
+            open_google()
  
         elif 'open stackoverflow' in command:         # it open stackoverflow
             stackoverflow()
             
         elif "wikipedia" in command:
            wikipedia()
+          
+        elif "open notepad" in command:
+            notepad()  
+            
+        elif "close notepad" in command:
+            kill_notepad()
             
             
         elif 'how are you' in command:
