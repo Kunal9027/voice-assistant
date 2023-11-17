@@ -86,8 +86,7 @@ def open_google():     #open google search function
     speak("opening google")
     search_url = f"https://www.google.com/"
     webbrowser.open(search_url)        
-            
-             
+                       
 def stackoverflow():    #open stackoverflow search function
     speak("Here you go to Stack Over flow. Happy coding")
     search_url = f"https://www.stackoverflow.com/"
@@ -97,8 +96,6 @@ def wikipedia():       #open wikipedia search function
     speak("Here you go to wikipedia")
     search_url = f"https://www.wikipedia.com/"
     webbrowser.open(search_url)      
-
-    
         
 def edge():            #open edge browser search function
     speak("opening edge")
