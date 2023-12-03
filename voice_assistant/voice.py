@@ -1,47 +1,36 @@
-from test import kunal
-import speech_recognition as sr
-import pyttsx3
+from test import *
+import tkinter as tk
 
-recognizer = sr.Recognizer()
-engine = pyttsx3.init()
+#------GUI------#
 
-def speak(text):      
-    engine.say(text)
+window = tk.Tk()     # Create a window object
+
+window.title("My First GUI Program")    # Set the title of the window
+window.minsize(width=500, height=300)   # Set the minimum size of the window
+window.configure(bg='#856ff8')          # window background 
+
+def button_click():
+    print("Button clicked!")
     
-    engine.runAndWait()
+def exit_click():
+    #speak("good bye sir")
+    window.destroy()    
 
-def listen():         
-    with sr.Microphone() as source:
-        print("Listening...")
-        recognizer.adjust_for_ambient_noise(source )
-        audio = recognizer.listen(source)
-        try:
-            text = recognizer.recognize_google(audio)
-            print("You said:", text)
-            return text
-        except sr.UnknownValueError:
-            print("Sorry, could not understand audio.")
-            return ""
-        except sr.RequestError as e:
-            print(f"Could not request results: {e}")
-            return ""
+def esc():
+    window.bind('<Escape>', lambda e, w=window: w.destroy())
 
+esc()
 
-def main():
-    
-    while True:
-        
-        command = listen().lower()
-        
-        if "wake up" in command :
-            kunal()
-           
-        elif "kill all 001" in command:
-            speak("master command accepted. voice assistant is shutting down")
-            break
-      
-      
+# Label
+my_label = tk.Label(text="Voice Assistant", font=("Arial", 24, "bold") , bg='#856ff8')
 
-if __name__ == "__main__":
-    main()
-    
+# Buttons
+button_1 = tk.Button(text="Click Me",font=("Arial",15 ,"bold") , command=kunal )
+
+button_2 = tk.Button(text="Exit",font=("Arial",15 ,"bold") , command=exit_click )
+
+my_label.pack()
+button_1.place(x=200, y=100)
+button_2.place(x=220, y=200)
+
+window.mainloop()

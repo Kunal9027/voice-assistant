@@ -20,8 +20,7 @@ def listen():         #listen function
         print("Listening...")
         recognizer.adjust_for_ambient_noise(source )
         audio = recognizer.listen(source)
-        
-            
+        print("Recognizing...")
         
         try:
             text = recognizer.recognize_google(audio)

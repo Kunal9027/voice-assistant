@@ -4,6 +4,7 @@ def kunal():
    
     wishMe()
     speak("how can i help you ?")
+   
   
     while True:
                 
@@ -12,7 +13,6 @@ def kunal():
         if {"hello", "hi", "hey"} & set(command.split()):
             speak("Hello Sir, How can I help you?")
             
-        
         elif {"time", "date"} & set(command.split()):
             now = datetime.datetime.now()
             speak("Current date and time : ")
@@ -20,8 +20,7 @@ def kunal():
         
         elif "search" in command:
             search()                
-                
-            
+
         elif "open brave" in command:
             brave()
           
@@ -47,8 +46,7 @@ def kunal():
             notepad()  
             
         elif "close notepad" in command:
-            kill_notepad()
-            
+            kill_notepad()           
             
         elif 'how are you' in command:
             speak("I am fine, Thank you sir")
@@ -65,11 +63,12 @@ def kunal():
  
         elif "wish me" in command:
             wishMe()
-               
-                
+                              
         elif {"about" , "who", "tell me about yourself"} & set(command.split()):
           #  print("I am a voice assistant created by the greatest enginner of all time. The one and only my mastre Kunal Chaudhary")
             speak("I am a voice assistant created by the greatest enginner of all time. The one and only my mastre Kunal Chaudhary")
+        
+        
         
         elif {"exit", "stop", "quit"} & set(command.split()):
             speak("Goodbye!")
