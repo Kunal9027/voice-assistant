@@ -5,6 +5,7 @@ import webbrowser
 import datetime
 import os
 
+
 #------INITIALIZING MODULES & FUNCTIONS------#
 
 recognizer = sr.Recognizer()
@@ -21,6 +22,7 @@ def listen():         #listen function
         recognizer.adjust_for_ambient_noise(source )
         audio = recognizer.listen(source)
         print("Recognizing...")
+        
         
         try:
             text = recognizer.recognize_google(audio)
